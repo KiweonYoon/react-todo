@@ -1,0 +1,58 @@
+.TodoItem {
+    margin-top: auto;
+    /* 위쪽 여백을 자동으로 설정 */
+    margin-right: auto;
+    /* 오른쪽 여백을 자동으로 설정 */
+
+    border-radius: 5px;
+    /* 테두리를 둥글게 만듦 */
+    box-shadow: 1px 2px 5px 1px #f67280;
+    /* 그림자 효과 추가 */
+    padding: 1rem; 
+    /* 안쪽 여백 설정 */
+    display: flex;
+    /* flexbox 사용 */
+    align-items: center;
+}
+    /* 수직 정렬을 중앙으로 설정 */
+
+    .TodoItem+.TodoItem {
+        margin-top: 15px;
+        /* 첫 번째 TodoItem을 제외한 나머지 TodoItem에 위쪽 여백 추가 */
+    }
+
+    .content {
+        cursor: pointer;
+        /* 마우스 커서 모양을 손가락으로 변경 */
+        flex: 1;
+        /* flexbox에서 차지하는 비율을 1로 설정 */
+        display: flex;
+        /* flexbox 사용 */
+        align-items: center;
+        /* 수직 정렬을 중앙으로 설정 */
+    }
+
+    .content svg {
+        font-size: 1.5rem;
+        /* 아이콘 크기 설정 */
+        color: #f67280;
+        /* 아이콘 색상 설정 */
+    }
+
+    .content .text {
+        margin-left: 0.5rem;
+        /* 왼쪽 여백 설정 */
+        flex: 1;
+        /* flexbox에서 차지하는 비율을 1로 설정 */
+    }
+
+    .content.checked.text {
+        color: #6c567b;
+        /* 텍스트 색상 설정 */
+        text-decoration: line-through;
+        /* 텍스트에 취소선 추가 */
+        cursor: pointer;
+        /* 마우스 커서 모양을 손가락으로 변경 */
+        opacity: 0.6;
+        /* 투명도 설정 */
+    }

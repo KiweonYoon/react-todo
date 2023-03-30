@@ -1,16 +1,16 @@
 import React from "react";
+import TodoItem from "./TodoItem";
+import './TodoList.css';
 
-const makeTodoList = () => (<>test</>)
-console.log('hi')
 const TodoList = ({todos}) => {
     console.log(todos, 'in TodoList 1')
     return (
-    <div>
+    <div className="TodoList">
         {
             todos.map(todo => {
                 console.log(todo, 'in todo')
                     return (
-                        <div key={todo.id}>{todo.text}</div>
+                        <TodoItem todo={todo} key = {todo.id}/>
                     )
                 }
             )

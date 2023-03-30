@@ -1,0 +1,25 @@
+.Template {
+    /* 위쪽 여백 20px 설정 */
+        padding-top: 20px;
+        /* 최대 높이를 화면 세로 길이 100%로 설정 */
+        max-height: 100vh;
+    }
+    
+    /* 제목 스타일 */
+    .title {
+        /* 너비를 화면 가로 길이 90%로 설정 */
+        width: 90vw;
+        /* 왼쪽 여백을 자동으로 설정 */
+        margin-left: auto;
+        /* 오른쪽 여백을 자동으로 설정 */
+        margin-right: auto;
+
+        padding-bottom: 20px;
+        /* 하단 여백 20px */
+        font-size: 1.5rem;
+        /* 폰트 크기 1.5rem */
+        font-weight: bold;
+        /* 폰트 굵기 bold */
+        color: #6c567b;
+        /* 글자 색상 #6c567b */
+}
