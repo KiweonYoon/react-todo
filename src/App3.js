@@ -1,51 +1,49 @@
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './App.css';
 import { useDispatch } from "react-redux";
-import { loginUser } from "react-redux";
+import { loginUser } from "./reducer/userSlice";
+import store from "./reducer/store";
+import MyPage from "./components2/MyPage";
+import LoginComponent from "./components2/LoginComponent";
 
-
-function LoginComponent() {
+function App3() {
+  
   const dispatch = useDispatch();
 
-  const [id, setId] = useState("")
-  const [password,setPassward] = useState("")
 
-  const [loading, setLoading] = useState("")
-  const [msg, setMsg] = useState("");
-
-  useEffect(() => {
-
-  }, [msg])
-
-  const LoginFunc = (e) => {
-    e.preventDefault();
-  }
   
+
+  // useEffect(() => {
+  //   if (msg) {
+  //     setTimeout(() => {
+  //       setMsg("");
+  //       setLoading(false);
+  //     }, 1500)
+  //   }
+
+  // }, [msg])
+
+  
+  const token = useSelector((state) => state.user.token)
+  // console.log(a, "in a")
+  const isLogin = token ? true : false;
+   
+  
+    
+  
+
+  // 토큰이 중앙저장소에 있나요? 있으면 true 없으면 false겟지요.
   return (
-    <>
-    <Provider>
-      <h1>LoginComponent</h1>
-      <form onSubmit = {LoginFunc}>
-        <label htmlfor="id">ID : </label>
-        <input type="text" id="id" />
-        <br />
-        <label htmlfor="password">Password : </label>
-        <input type = "password" />
-        <br />
-        <button type = "submit">로그인</button>
-        <br />
-          {msg}
-      </form>
-      </Provider>
-    </>
+    
+    <Provider store={store}>
+      {token ? <MyPage/> : <LoginComponent/>}
+    </Provider>
+    
   )
 }
-
-
-  
-  // let body = {
+  // let body = 
   //   id : userId,
   //   password :  userPassword
   // };
@@ -65,4 +63,4 @@ function LoginComponent() {
 //   }
 // }, [])
 
-export default LoginComponent;
+export default App3;
