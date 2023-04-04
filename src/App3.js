@@ -1,9 +1,9 @@
 import { Provider, useSelector } from "react-redux";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+
+
 import './App.css';
 import { useDispatch } from "react-redux";
-import { loginUser } from "./reducer/userSlice";
+
 import store from "./reducer/store";
 import MyPage from "./components2/MyPage";
 import LoginComponent from "./components2/LoginComponent";
@@ -36,7 +36,7 @@ function App3() {
 
   // 토큰이 중앙저장소에 있나요? 있으면 true 없으면 false겟지요.
   return (
-    
+  
     <Provider store={store}>
       {token ? <MyPage/> : <LoginComponent/>}
     </Provider>

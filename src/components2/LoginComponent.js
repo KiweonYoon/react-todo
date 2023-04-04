@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import {loginUser} from "../reducer/userSlice";
-import App3 from "../App3";
-import MyPage from "./MyPage";
+
+
 
 
 const LoginComponent = () => {
@@ -24,7 +24,7 @@ const LoginComponent = () => {
           let body = {
             email: id,
             password
-          };
+          }; 
     
           axios.post("http://15.164.230.202:3011/auth/login", body)
             .then((res) => {
@@ -32,6 +32,7 @@ const LoginComponent = () => {
                 if(res.data.statusCode === 201){
                     console.log("로그인");
                     dispatch(loginUser(res.data.result.access_token));
+                    localStorage.setItem('token', res.data.result.access_token)
                     console.log('fdsafas')
                     
                 }
